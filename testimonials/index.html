@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+    <link rel="stylesheet" href="index.css" />
+    <title>Frontend Mentor | Coding Bootcamp Testimonials Slider</title>
+
+    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+    <style>
+      .attribution {
+        font-size: 20px;
+        text-align: center;
+      }
+      .attribution a {
+        color: hsl(228, 45%, 44%);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="top-container">
+      <div class="profile active">
+        <div class="desc">
+          <p>
+            “ I’ve been interested in coding for a while but never taken the
+            jump, until now. I couldn’t recommend this course enough. I’m now in
+            the job of my dreams and so excited about the future. ”
+          </p>
+
+          <h3 class="profile-name">Tanya Sinclair</h3>
+          <h3 class="profile-type">UX Engineer</h3>
+        </div>
+        <div class="profile-img">
+          <img src="images/image-tanya.jpg" alt="" />
+        </div>
+      </div>
+      <!-- second profile  -->
+      <div class="profile">
+        <div class="desc">
+          <p>
+            “ If you want to lay the best foundation possible I’d recommend
+            taking this course. The depth the instructors go into is incredible.
+            I now feel so confident about starting up as a professional
+            developer. ”
+          </p>
+          <!-- about section  -->
+          <h3 class="profile-name">John Tarkpor</h3>
+          <h3 class="profile-type">Junior Front-end Developer</h3>
+        </div>
+        <div class="profile-img">
+          <img src="images/image-john.jpg" alt="" />
+        </div>
+      </div>
+      <div class="navigation">
+        <button class="btn btn-prev" onclick="prevSlide(1)">
+          <svg xmlns="http://www.w3.org/2000/svg" width="12" height="18">
+            <path
+              fill="none"
+              stroke="#8585AC"
+              stroke-width="3"
+              d="M11 1L3 9l8 8"
+            />
+          </svg>
+        </button>
+        <button class="btn btn-next" onclick="nextSlide(1)">
+          <svg xmlns="http://www.w3.org/2000/svg" width="13" height="18">
+            <path
+              fill="none"
+              stroke="#8585AC"
+              stroke-width="3"
+              d="M2 1l8 8-8 8"
+            />
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <div class="attribution">
+      Challenge by
+      <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+        >Frontend Mentor</a
+      >. Coded by <a href="#">Vipin chandra</a>.
+    </div>
+  </body>
+  <script>
+    /* slide show */
+
+    const eachProfile = document.querySelectorAll(".profile");
+    let totalIndex = eachProfile.length - 1;
+    console.log(eachProfile[totalIndex]);
+    let slideIndex = 0;
+
+    /* function for prev */
+
+    const prevSlide = (Index) => {
+      slideIndex -= Index;
+      prevSlideShow(slideIndex);
+    };
+
+    const nextSlide = (Index) => {
+      slideIndex += Index;
+      nextSlideShow(slideIndex);
+    };
+
+    const prevSlideShow = (Index) => {
+      console.log("hello");
+      for (i = 0; i <= totalIndex; i++) {
+        /* making peofile display none by replacing class  */
+        eachProfile[i].className = eachProfile[i].className.replace(
+          "profile active",
+          "profile"
+        );
+      }
+      if (Index < 0) {
+        eachProfile[totalIndex].className = eachProfile[
+          totalIndex
+        ].className.replace("profile", "profile active");
+        slideIndex = totalIndex;
+      } else {
+        eachProfile[slideIndex].className = eachProfile[
+          slideIndex
+        ].className.replace("profile", "profile active");
+      }
+    };
+    /* next slide show */
+    const nextSlideShow = (Index) => {
+      for (i = 0; i <= totalIndex; i++) {
+        /* making peofile display none by replacing class  */
+        eachProfile[i].className = eachProfile[i].className.replace(
+          "profile active",
+          "profile"
+        );
+      }
+      /* checking if the index is greator or lower than total index */
+      if (Index > totalIndex) {
+        eachProfile[0].className = eachProfile[0].className.replace(
+          "profile",
+          "profile active"
+        );
+        /* setting to zero index when range goes out of total index */
+        slideIndex = 0;
+      } else {
+        eachProfile[slideIndex].className = eachProfile[
+          slideIndex
+        ].className.replace("profile", "profile active");
+      }
+    };
+  </script>
+</html>
