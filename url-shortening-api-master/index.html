@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+    <link rel="stylesheet" href="index.css" class="rel" />
+    <title>Frontend Mentor | Shortly URL shortening API Challenge</title>
+
+    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+    <style>
+      .attribution {
+        font-size: 11px;
+        text-align: center;
+      }
+      .attribution a {
+        color: hsl(228, 45%, 44%);
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="navbar">
+      <div class="brand-logo">
+        <h3>Shortly</h3>
+      </div>
+      <ul class="nav-list">
+        <li class="nav-items item1">Feature</li>
+        <li class="nav-items item2">Pricing</li>
+        <li class="nav-items item3">Resources</li>
+      </ul>
+      <ul class="nav-right-list">
+        <li class="nav-items item4">Login</li>
+        <li class="nav-items item5">Signup</li>
+      </ul>
+      <span class="open-slide">
+        <a href="#" onclick="openSideMenu()">
+          <svg width="30" height="30">
+            <path d="M0,5 30,5" stroke="grey" stroke-width="5" />
+            <path d="M0,14 30,14" stroke="grey" stroke-width="5" />
+            <path d="M0,23 30,23" stroke="grey" stroke-width="5" />
+          </svg>
+        </a>
+      </span>
+    </nav>
+    <div class="responsive-nav active">
+      <ul class="mobile-nav">
+      <li class="nav-items item3">Resources</li>
+      <li class="nav-items item1">Feature</li>
+      <li class="nav-items item2">Pricing</li>
+      <li class="nav-items item4">Login</li>
+      <li class="nav-items item5">Signup</li>
+      </ul>
+    </div>
+
+    <!-- showcase -->
+
+    <section class="showcase">
+      <div class="showcase-desc">
+        <p class="showcase-line">More than just shorter links</p>
+        <p class="showcase-info">
+          Build your brand’s recognition and get detailed insights on how your
+          links are performing.
+        </p>
+        <button class="general">Get Started</button>
+      </div>
+      <div class="showcase-bg"></div>
+    </section>
+
+
+    <!-- url api section -->
+    <section class="main-container"> 
+      <!-- form section -->
+
+
+    <div class="form-container">
+      <input type="text" class="user-input" id="input-link" placeholder="Shorten a link here..."/>
+      <button class="submit" onclick="findResult()">Shorten it!</button>
+      <span class="message" id="message"></span>
+    </div>
+    <div class="result-container" id="result">
+
+    </div>
+   
+
+    <!-- feature -->
+    <div class="Feature-container">
+      <div class="heading-section">
+        <p class="heading">Advanced Statistics</p>
+        <p class="desc">
+          Track how your links are performing across the web with our advanced
+          statistics dashboard.
+        </p>
+      </div>
+      <div class="feature-cards">
+          
+        <div class="brand brand-one">
+          <img src="images/icon-brand-recognition.svg" alt="" />
+          <p class="card-headers">Brand Recognition</p>
+          <p class="card-desc">
+            Boost your brand recognition with each click. Generic links don’t
+            mean a thing. Branded links help instil confidence in your content.
+          </p>
+        </div>
+        <hr></hr>
+        <div class="vl"></div>
+        <div class="brand brand-two">
+          <img src="images/icon-detailed-records.svg" alt="" />
+          <p class="card-headers">Detailed Records</p>
+          <p class="card-desc">
+            Gain insights into who is clicking your links. Knowing when and
+            where people engage with your content helps inform better decisions.
+          </p>
+        </div>
+        <hr></hr>
+        <div class="vl">&nbsp;</div>
+        <div class="brand brand-three">
+          <img src="images/icon-fully-customizable.svg" alt="" />
+          <p class="card-headers">Fully Customizable</p>
+          <p class="card-desc">
+            Improve brand awareness and content discoverability through
+            customizable links, supercharging audience engagement.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <div class="ad">
+    <h1 class="book">Book your links today</h1>
+    <button class="general-btn">Get Started!</button>
+  </div>
+
+  <footer class="foot-container">
+    <div class="name-container">
+      <h3>Shortly</h3>
+    </div>
+    <div class="features-container">
+      <ul class="feature-list">
+        <li class="list-item">Features</li>
+        <li class="list-item"><a href="#">Link Shortening</a></li>
+        <li class="list-item"><a href="#">Branded Links</a></li>
+        <li class="list-item"><a href="#">Analytics</a></li>
+      </ul>
+    </div>
+    <div class="Resource-container">
+      <ul class="resource-list">
+      <li class="list-item">Resources</a></li>
+      <li class="list-item"><a href="#">Blog</a></li>
+      <li class="list-item"><a href="#">Developers</a></li>
+      <li class="list-item"><a href="#">Support</a></li>
+      <ul class="feature-list">
+    </div>
+    <div class="company-container">
+      <ul class="company-list">
+      <li class="list-item">Company</li>
+      <li class="list-item"><a href="#">About</a></li>
+      <li class="list-item"><a href="#">Our Team</a></li>
+      <li class="list-item"><a href="#">Careers</a></li>
+      <li class="list-item"><a href="#">Contact</a></li>
+    </ul>
+    </div>
+    <div class="socials-container">
+      <ul class="socials-list">
+      <li class="social-item"><a href="#"><img src="images/icon-facebook.svg" alt=""></a></li>
+      <li class="social-item"><a href="#"><img src="images/icon-twitter.svg" alt=""></a></li>
+      <li class="social-item"><a href="#"><img src="images/icon-pinterest.svg" alt=""></a></li>
+      <li class="social-item"><a href="#"><img src="images/icon-instagram.svg" alt=""></a></li>
+    </ul>
+    </div>
+  </footer>
+
+    <div class="attribution">
+      Challenge by
+      <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+        >Frontend Mentor</a
+      >. Coded by <a href="github.com/Easyvipin">Easyvipin</a>.
+    </div>
+  </body>
+  <script>
+      
+    window.onload = function(){
+      const resultContainer = document.getElementById('result');
+    if(sessionStorage.getItem('result') !== null){
+      /* checking if the storage does't contain null */
+
+      resultContainer.innerHTML =sessionStorage.getItem('result');
+    }
+    }
+    const openSideMenu = () => {
+      const responsiveNav = document.querySelector('.responsive-nav');
+      responsiveNav.setAttribute("class" , "responsive-nav active");
+    }
+    const findResult = () => {
+     const userLink = document.getElementById('input-link').value;
+     const message = document.getElementById('message');
+     const resultContainer = document.getElementById('result');
+     const relLink = "https://rel.ink/";
+     if(userLink !==""){
+     axios.post(' https://rel.ink/api/links/',
+     {
+  "url": userLink.trim()
+     }
+     )
+     .then(resp=>{
+       const {hashid} = resp.data;
+       const link = relLink+hashid; /* adding a link to hashid recieved by api */
+       resultContainer.innerHTML += `
+       <div class="each-result">
+        <p class="full-link">${userLink}</p>
+        <a href="" class="result-link">${link}</a>
+        <button class="copy" id="copy" onclick="onclipboard()" data-link=${link}>Copy</button>
+     </div>
+       `
+       /* storing in the session */
+    sessionStorage.setItem("result",resultContainer.innerHTML);
+     })
+     .catch(err=>{
+       console.log(err)
+       /* messages on error */
+
+       message.innerText="Enter a valid link";
+     })
+    }
+    else {
+       /* messages on left blank */
+      message.innerText="Please add a link";
+    }
+    }
+    const onclipboard = (event) => {
+
+      /* to apply select() ,i had to create a dummy dom element because it does not apply to <a> annd <p> tags where my link is available*/
+     const tempInput = document.createElement("input");
+     tempInput.value  = this.event.target.getAttribute("data-link");
+     document.body.appendChild(tempInput);
+     tempInput.select(); /* select the text in the input element */
+     tempInput.setSelectionRange(0, 99999)
+     document.execCommand('copy'); /* copy command on dom */
+     this.event.target.style.background ="hsl(257, 27%, 26%)";
+     this.event.target.innerHTML="copied!";
+     document.body.removeChild(tempInput); /* removing the dummy element after copying */ 
+    }
+  </script>
+</html>
