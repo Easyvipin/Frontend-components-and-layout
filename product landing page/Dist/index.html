@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>mac</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/simplelightbox/1.17.2/simplelightbox.min.css"
+    />
+    <script
+      src="https://kit.fontawesome.com/8d694f53ee.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+  </head>
+  <body>
+    <!-- nav -->
+    <nav class="navbar">
+      <div class="container">
+        <h1 class="logo">MAC</h1>
+        <ul class="nav">
+          <li><a href="#">Home</a></li>
+          <li><a href="#">About</a></li>
+        </ul>
+      </div>
+    </nav>
+    <!-- showcase section - a -->
+    <section class="section-showcase">
+      <div class="container">
+        <div class="showcase-desc">
+          <h1>The Notebook of the future</h1>
+          <p>
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sapiente,
+            aut commodi nulla rem delectus a itaque expedita corporis alias
+            consectetur?
+          </p>
+          <button class="btn">Read more</button>
+        </div>
+        <img src="images/macbook-new.webp" alt="" class="showcase-img" />
+      </div>
+    </section>
+
+    <!-- overlay design -->
+
+    <section class="section-overlay">
+      <div class="overlay">
+        <div class="section-inner">
+          <h3>Get a Mac</h3>
+          <h2>People Aren't Using the notebook!</h2>
+          <p>
+            The notebook you'll spend your hours on
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="about">
+      <div class="container">
+        <img src="images/kindpng_3582387.png" alt="" />
+        <div class="specification">
+          <h1>Mac book-PRO</h1>
+          <div class="specific-grid">
+            <div class="processor">
+              <h2 class="type text-small">Core</h2>
+              <h1 class="type text-big">I5</h1>
+              <span class="unit">Intel cpu</span>
+            </div>
+            <div class="clock-speed">
+              <h2 class="type text-big">GHz</h2>
+              <h2 class="type text-small">3.4</h2>
+              <span class="unit">Frquency</span>
+            </div>
+            <div class="storage">
+              <h2 class="type text-big">256</h2>
+              <h2 class="type text-small">GB</h2>
+              <span class="unit">ssd</span>
+            </div>
+            <div class="ram">
+              <h2 class="type text-big">8</h2>
+              <h2 class="type text-small">GB</h2>
+              <span class="unit">DDR4 RAM</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- section grid -->
+    <section class="show-container">
+      <div class="container">
+        <div class="img-one" data-aos="fade-up-left">
+          <img src="images/photo-of-woman-using-laptop-4049210.jpg" alt="" />
+        </div>
+        <div class="middle" data-aos="fade-left">
+          <img src="images/middle.png" alt="" data-aos="zoom-in-up" />
+        </div>
+        <div class="img-two" data-aos="fade-down">
+          <img
+            src="images/woman-in-white-crew-neck-t-shirt-wearing-black-framed-3768116.jpg"
+            alt=""
+          />
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="section-footer py-4 bg-primary">
+      <div class="container">
+        <div>
+          <h2 class="text-2 mb-1">Lorem ipsum dolor sit.</h2>
+          <a href="http://twitter.com">
+            <i class="fab fa-twitter fa-2x"></i>
+          </a>
+          <a href="http://facebook.com">
+            <i class="fab fa-facebook fa-2x"></i>
+          </a>
+          <a href="http://youtube.com">
+            <i class="fab fa-youtube fa-2x"></i>
+          </a>
+        </div>
+        <div>
+          <h3>Company Info</h3>
+          <ul>
+            <li><a href="#">All Products</a></li>
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Terms of Service</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3>Blog Posts</h3>
+          <ul>
+            <li><a href="#">Lorem ipsum dolor.</a></li>
+            <li><a href="#">Lorem ipsum dolor.</a></li>
+            <li><a href="#">Lorem ipsum dolor.</a></li>
+            <li><a href="#">Lorem ipsum dolor.</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3>Subscribe</h3>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit.
+          </p>
+          <form
+            class="mt-1"
+            name="email-form"
+            method="POST"
+            data-netlify="true"
+          >
+            <div class="email-form">
+              <span class="form-control-wrap"
+                ><input
+                  type="email"
+                  name="email"
+                  id="email"
+                  size="40"
+                  class="form-control"
+                  placeholder="E-mail" /></span
+              ><button type="submit" value="Submit" class="form-control submit">
+                <i class="fas fa-chevron-right"></i>
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </footer>
+  </body>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/simplelightbox/1.17.2/simple-lightbox.min.js"></script>
+  <script>
+    $(function () {
+      const $gallery = $(".gallery a").simpleLightbox();
+    });
+  </script>
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <script>
+    AOS.init();
+  </script>
+</html>
